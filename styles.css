@@ -1,0 +1,81 @@
+:root { color-scheme: light; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; color: #33281f; background: #e6dfcf; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 280px; background: linear-gradient(155deg, #efeadf 0 37%, #e2dac8 37% 77%, #d6cbb5 77%); min-height: 100vh; }
+main { max-width: 1140px; margin: auto; padding: 48px 32px 24px; }
+header { text-align: center; }
+.eyebrow { margin: 0 0 12px; font-size: 12px; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; color: #685339; }
+.eyebrow span { color: #8c6231; margin-right: 8px; }
+h1 { font-family: Georgia, serif; font-size: clamp(36px, 5vw, 58px); letter-spacing: -.04em; margin: 0 0 16px; line-height: 1.08; }
+.intro { font-size: 16px; line-height: 1.6; color: #665848; margin: 0; }
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 38px; }
+.card { --accent: #596344; --light: #8a9269; --dark: #3e4933; position: relative; padding: 8px; background: #392b21; clip-path: polygon(16px 0, calc(100% - 16px) 0, 100% 16px, 100% calc(100% - 16px), calc(100% - 16px) 100%, 16px 100%, 0 calc(100% - 16px), 0 16px); }
+.mechanic { --accent: #936b32; --light: #bd9853; --dark: #694821; }
+.constraint { --accent: #814944; --light: #ac7366; --dark: #5f302e; }
+.card-inner { position: relative; padding: 16px; background: linear-gradient(145deg, var(--light) 0 13%, var(--accent) 13% 78%, var(--dark) 78%); clip-path: polygon(11px 0, calc(100% - 11px) 0, 100% 11px, 100% calc(100% - 11px), calc(100% - 11px) 100%, 11px 100%, 0 calc(100% - 11px), 0 11px); }
+.card-heading { display: flex; align-items: center; gap: 10px; color: #fff2d4; margin-bottom: 16px; }
+h2 { font-size: 16px; font-weight: 650; margin: 0; }
+.emblem { width: 34px; height: 34px; padding: 4px; fill: none; stroke: currentColor; stroke-width: 1.6; }
+.ordinal { margin-left: auto; font-size: 12px; font-weight: 700; opacity: .8; }
+.parchment { background: #f3e8ce; border: 2px solid #493326; box-shadow: inset 0 6px #e3d2ad; min-height: 152px; padding: 24px 18px; display: flex; align-items: center; justify-content: center; text-align: center; }
+.ingredient { font-size: clamp(20px, 2.1vw, 27px); line-height: 1.22; font-weight: 730; overflow-wrap: anywhere; }
+button { font: inherit; cursor: pointer; min-height: 48px; border: 2px solid #35291f; font-weight: 650; }
+.lock { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; margin-top: 18px; background: #d8c8a6; color: #342b24; box-shadow: 0 3px #362b22; }
+.lock svg { width: 24px; height: 24px; fill: #6b706b; stroke: #292d2b; stroke-width: 2; }
+.lock .shackle { fill: none; transform: translate(3px, -2px) rotate(20deg); transform-origin: 12px 10px; }
+[data-locked="true"] .shackle { transform: none; }
+[data-locked="true"] .lock { background: #39413a; color: #fff0d1; border-color: #262b27; }
+[data-locked="true"] .lock svg { fill: #c4b99b; stroke: #eee3c9; }
+button:hover:not(:disabled) { filter: brightness(1.1); }
+button:active:not(:disabled) { translate: 0 2px; }
+button:focus-visible { outline: 3px solid #fff9ec; outline-offset: 3px; box-shadow: 0 0 0 6px #29231d; }
+.actions { text-align: center; margin-top: 32px; }
+.shuffle { padding: 12px 34px; min-width: 250px; color: #fff2d4; background: #543b2b; border-bottom-width: 5px; border-radius: 3px; font-size: 18px; }
+.shuffle span { font-size: 26px; vertical-align: -2px; margin-right: 9px; }
+.shuffle:disabled { cursor: default; background: #c8bfad; color: #665e50; border-color: #a69a84; }
+#status { font-size: 13px; min-height: 20px; color: #665848; margin: 14px 0 0; }
+footer { text-align: center; font-size: 12px; color: #756653; margin-top: 38px; }
+.shuffling { animation: shuffle 200ms ease-out; }
+@keyframes shuffle { 0% { transform: translateY(0); } 40% { transform: translateY(-6px) rotate(-.7deg); } 100% { transform: translateY(0); } }
+@media (max-width: 700px) {
+  main { padding: 24px 20px 20px; }
+  .eyebrow { font-size: 10px; letter-spacing: .12em; margin-bottom: 10px; }
+  h1 { margin-bottom: 10px; }
+  .intro { font-size: 13px; line-height: 1.5; }
+  .cards { grid-template-columns: 1fr; gap: 12px; margin-top: 22px; }
+  .card { padding: 6px; }
+  .card-inner { padding: 10px 14px; }
+  .card-heading { margin-bottom: 8px; }
+  .emblem { width: 26px; height: 26px; }
+  h2 { font-size: 14px; }
+  .parchment { min-height: 68px; padding: 14px; box-shadow: inset 0 4px #e3d2ad; }
+  .ingredient { font-size: 20px; }
+  .lock { min-height: 44px; margin-top: 9px; font-size: 14px; }
+  .actions { margin-top: 20px; }
+  .shuffle { min-height: 52px; padding: 6px 24px; }
+  #status { font-size: 11px; margin-top: 10px; }
+  footer { margin-top: 20px; font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) { .shuffling { animation: none; } }
+.save-combination { margin-top: 18px; padding: 10px 22px; background: #f3e8ce; color: #493326; box-shadow: 0 3px #b4a180; }
+.favorites { margin-top: 40px; border-top: 2px solid #b5a386; padding-top: 24px; }
+.favorites-heading { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+.favorites-heading h2 { font: 700 28px Georgia, serif; }
+.favorites-heading > span { color: #665848; font-size: 13px; }
+.favorites-status { min-height: 24px; margin: 12px 0; font-weight: 650; overflow-wrap: anywhere; }
+.favorites-empty { padding: 24px; margin: 0; border: 2px dashed #b5a386; text-align: center; color: #665848; }
+.favorites-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 20px; }
+.favorite-entry { display: flex; align-items: center; gap: 16px; min-width: 0; }
+.favorite-labels { flex: 1; min-width: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.favorite-card { padding: 5px; }
+.favorite-card .card-inner { padding: 10px; }
+.favorite-card .card-heading { font-size: 12px; margin: 0 0 8px; }
+.favorite-card .parchment { min-height: 80px; padding: 14px 10px; font-size: 15px; line-height: 1.4; font-weight: 650; overflow-wrap: anywhere; }
+.favorite-delete { flex-shrink: 0; background: #e3d2b1; color: #5f302e; padding: 10px 16px; }
+@media (max-width: 700px) {
+  .favorites { margin-top: 28px; padding-top: 20px; }
+  .favorite-entry { align-items: stretch; flex-direction: column; gap: 10px; }
+  .favorite-labels { grid-template-columns: 1fr; gap: 6px; }
+  .favorite-card .card-inner { padding: 8px 12px; }
+  .favorite-card .parchment { min-height: 44px; padding: 10px; }
+  .favorite-delete { align-self: flex-end; min-width: 100px; }
+}

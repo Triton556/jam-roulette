@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Джем рулетка</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./src/app.mjs"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow"><span aria-hidden="true">◆</span> Мастерская игровых идей</p>
+      <h1>Джем рулетка</h1>
+      <p class="intro">Три ингредиента для новой игры.<br>Закрепи удачное — остальное доверь случаю.</p>
+    </header>
+    <section class="cards" aria-label="Ингредиенты игры"></section>
+    <div class="actions">
+      <button class="shuffle" type="button"><span aria-hidden="true">⤨</span> Перемешать</button>
+      <p id="status" role="status">Все три карточки участвуют в перемешивании</p>
+      <button class="save-combination" type="button"><span aria-hidden="true">◇</span> Сохранить комбинацию</button>
+    </div>
+    <section class="favorites" aria-labelledby="favorites-heading">
+      <div class="favorites-heading"><h2 id="favorites-heading">Избранное</h2><span>Сохранённые идеи</span></div>
+      <p class="favorites-status" role="status" aria-live="polite"></p>
+      <p class="favorites-empty">Пока ничего нет</p>
+      <ol class="favorites-list"></ol>
+    </section>
+    <footer>Хорошая игра начинается с неожиданного сочетания.</footer>
+    <noscript>Для генератора нужно включить JavaScript.</noscript>
+  </main>
+</body>
+</html>
